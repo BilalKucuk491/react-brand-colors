@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 320px;
+  min-width: 320px;
+  border-right: 1px solid #ccc;
+  padding: 25px;
+  .logo {
+    margin-bottom: 20px;
+  }
+  .logo a {
+    font-size: 25px;
+  }
+  .description {
+    line-height: 1.7;
+    color: #607d8b;
+    margin: 30px 0 20px;
+  }
+  .menu ul li a {
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-top: 15px;
+    cursor: pointer;
+    &:hover {
+      color: #0099e5;
+    }
+  }
+}
+
+.about-modal {
+  max-width: 720px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(#000, $alpha: 0.1);
+  padding: 40px;
+  position: relative;
+
+  .modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: rgb(240, 237, 237);
+    cursor: pointer;
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 17px;
+    color: #607d8b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  strong {
+    color: black;
+  }
+}
+
+.about-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#fff, 0.8);
+}
+.copied {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--bgColor);
+  color: var(--textColor);
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+  background: #f8f8f8;
+  .header {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    background: #fff;
+    align-items: center;
+    .download {
+      padding-right: 25px;
+      display: flex;
+      align-items: center;
+      .actions {
+        display: flex;
+        margin-right: 15px;
+        a,
+        button {
+          height: 30px;
+          width: 30px;
+          background: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          svg {
+            height: 15px;
+            width: 15px;
+          }
+        }
+
+        select {
+          height: 30px;
+          padding: 0 15px;
+          background: #eeee;
+          border-radius: 4px;
+          appearance: none;
+          text-align: center;
+          margin-right: 7px;
+          cursor: pointer;
+        }
+      }
+      .selected {
+        font-size: 14px;
+        font-weight: 500;
+        color: #999;
+        display: flex;
+        align-items: center;
+        svg {
+          display: block;
+          background: transparent;
+          margin-right: 7px;
+          cursor: pointer;
+          path {
+            stroke: #999;
+          }
+        }
+      }
+    }
+    .search {
+      flex: 1;
+      position: relative;
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        padding: 0 20px 0 50px;
+      }
+    }
+  }
+
+  .brands {
+    padding: 25px;
+    .brand {
+      border: 1px solid #ddd;
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+
+      h5 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      &.selected {
+        border-color: blue;
+        .brand-colors {
+          span {
+            flex: 1;
+            margin-right: 10px;
+            text-indent: 0;
+          }
+        }
+      }
+    }
+
+    .brand-colors {
+      display: flex;
+
+      span {
+        background: var(--bgColor);
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--textColor);
+        text-indent: -9999px;
+        width: 70px;
+      }
+    }
+  }
+}
