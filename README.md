@@ -1,5 +1,5 @@
 
-<a href=""><h2>Click for Live Demo</h2></a>
+<a href=""><h1>Click for Live Demo</h1></a>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
